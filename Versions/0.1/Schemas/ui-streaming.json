@@ -1,0 +1,65 @@
+{
+  "openrpc": "1.2.1",
+  "info": {
+    "version": "0.1.0",
+    "title": "Insider UI Streaming"
+  },
+  "methods": [
+    {
+      "name": "state-set",
+      "description": "Set a value for a given state key",
+      "params": [
+        {
+          "name": "key",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "value",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "null",
+        "description": "",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "metric-add",
+      "description": "Add a count and duration value for a given metric key",
+      "params": [
+        {
+          "name": "key",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "count",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "duration",
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "result": {
+        "name": "null",
+        "description": "",
+        "schema": {
+          "type": "null"
+        }
+      }
+    }
+  ]
+}
