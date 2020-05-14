@@ -1,10 +1,10 @@
 
 # Insider
-Insider is a library exporting application state and metrics. 
+Insider is a .Net Core package exporting application state and metrics. 
 
 UI is a simple web page with `state` and `metrics` tables. 
 
-It supports integration with [Profiler](https://github.com/r-alekseev/Profiler) for collecting metrics.
+Insider supports integration with [Profiler](https://github.com/r-alekseev/Profiler) for collecting metrics.
 
 ## Design
 
@@ -27,21 +27,29 @@ Page connects to application's `ui-streaming` channel and starting to receive da
 ```json
 --> {"jsonrpc": "2.0", "method": "state-set", "params": {"key": "version", "value": "0.1"}}
 --> {"jsonrpc": "2.0", "method": "state-set", "params": {"key": "health", "value": "green"}}
---> {"jsonrpc": "2.0", "method": "metric-add", "params": {"key": "calc-stats", "count": 44, "duration": 731}}
+--> {"jsonrpc": "2.0", "method": "metric-set", "params": {"key": "calc-stats", "count": 44, "duration": 731}}
 ```
 
 #### Schema
 
 See [Schema](https://github.com/r-alekseev/Insider/blob/master/Versions/0.1/Schemas/ui-streaming.json) in [OpenRpc](https://open-rpc.org/) format.
 
+## Installation
+
+```
+Install-Package Insider.Local
+```
+
 ## Configuration
 
-### Insider Local Library
+```csharp
+var insider = new LocalInsiderConfiguration()
+    .ConfigureDefault()
+    .CreateInsider();
+```
 
 ```csharp
-var insider = new InsiderConfiguration()
-    .ConfigureLocal()
-    .CreateInsider();
+insider.Run();
 ```
 
 ### Profiler Integration
@@ -64,7 +72,7 @@ insider.SetState("health", "Green");
 ### Metrics
 
 ```csharp
-insider.AddMetric("calc-stats", count: 44, duration: TimeSpan.FromMilliseconds(731));
+insider.SetMetric("calc-stats", count: 44, duration: TimeSpan.FromMilliseconds(731));
 ```
 
 ### Metrics with Profiler

@@ -31,8 +31,8 @@
       }
     },
     {
-      "name": "metric-add",
-      "description": "Add a count and duration value for a given metric key",
+      "name": "metric-set",
+      "description": "Set a count and duration value for a given metric key",
       "params": [
         {
           "name": "key",
