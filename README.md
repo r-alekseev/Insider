@@ -2,6 +2,14 @@
 
 Insider is a library or dedicated server exporting you application state and metrics.
 
+Here's the desired state of a product. See real implementations below.
+
+## Versions
+
+|Vision|Implementation|Package|
+|-------|--------------|-------|
+|[v0.1](https://github.com/r-alekseev/Insider/blob/master/Versions/0.1/README.md)|[.Net Core](https://github.com/r-alekseev/Insider.NetCore/tree/v0.1.0)|[![NuGet version (Insider.Local)](https://img.shields.io/nuget/v/Insider.Local.svg?style=flat)](https://www.nuget.org/packages/Insider.Local/)|
+
 ## Design
 
 ### Local Library
@@ -30,12 +38,6 @@ Insider dedicated server stores data in some external storage.
 
 ![Dedicated Server Design](https://github.com/r-alekseev/Insider/blob/assets/diagrams/Insider-Remote.png?raw=true)
 
-## Versions
-
-|Version|Implementations|
-|-------|---------------|
-|[v0.1](https://github.com/r-alekseev/Insider/blob/master/Versions/0.1/README.md)|-|
-
 ## Integrations
 
-[Insider.NetCore](https://github.com/r-alekseev/Insider.NetCore) support integration with [Profiler](https://github.com/r-alekseev/Profiler) - Minimalistic and fast profiling library.
+[Insider.NetCore](https://github.com/r-alekseev/Insider.NetCore) support integration with [Profiler](https://github.com/r-alekseev/Profiler) - Fast and lightweight profiling library.
